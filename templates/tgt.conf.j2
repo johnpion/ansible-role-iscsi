@@ -1,0 +1,10 @@
+{% for iscsi in iscsi_connection %}
+<target iqn.1971-01.{{ inventory_hostname }}:{{ iscsi.name }}>
+    # provided devicce as a iSCSI target
+    backing-store {{ iscsi.storage }}
+    # iSCSI Initiator's IP address you allow to connect
+    initiator-address {{ iscsi.client_ip }}
+    # authentication info ( set anyone you like for "username", "password" )
+    incominguser {{ iscsi.client_name }} {{ iscsi.client_pass }}
+</target>
+{% endfor %}

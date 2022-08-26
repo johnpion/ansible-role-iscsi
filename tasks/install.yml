@@ -1,0 +1,12 @@
+- name: install tgt
+  ansible.builtin.apt:
+    pkg: tgt
+
+- name: config tgt
+  ansible.builtin.template:
+    src: tgt.conf.j2
+    dest: /etc/tgt/conf.d/tgt.conf
+    owner: root
+    group: root
+    mode: 0640
+  notify: restart tgt
