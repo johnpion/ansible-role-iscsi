@@ -1,10 +1,12 @@
 galaxy_info:
-  author: John Seregin seregin.john@gmail.com
+  author: Ivan Serohin
   license: license Apache-2.0
-  description: ansible role 'iSCSI'
-  min_ansible_version: '2.9'
-
+  role_name: iscsi
+  namespace: johnpion
+  description: ansible role 'iscsi' for sharing block devices via network
+  min_ansible_version: '2.14'
   platforms:
     - name: Debian
       versions:
         - buster
+    #     - bullseye
