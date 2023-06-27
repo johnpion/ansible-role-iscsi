@@ -16,7 +16,8 @@ push_to_github:
     - git add .
     - COMMIT_MESSAGE=$(git log -1 --pretty=%B)
     - git commit -m "$COMMIT_MESSAGE"
-    - git push origin HEAD:main
+    - git checkout -b main
+    - git push origin main
   only:
     - main
 
