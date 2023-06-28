@@ -15,6 +15,7 @@ push_to_github:
     - git remote set-url origin git@github.com:johnpion/ansible-role-$ROLE.git
     - git add .
     - COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+    - echo "$COMMIT_MESSAGE"
     - git commit -m "$COMMIT_MESSAGE"
     # - git checkout -b main
     - git push origin HEAD:main
